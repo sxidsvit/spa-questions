@@ -20,7 +20,10 @@ export function getAuthForm() {
 }
 
 export function authWithEmailAndPassword(email, password) {
-  const apiKey = 'AIzaSyDIwdXP5VEbTh2z8iuw4cKftPCCieqja2U'
+  // apiKey для доступа к проекту на сайте FIREBASE
+  // кроме ключа для входа понадобиться email & password
+  const apiKey =
+    'AIzaSyB1YquE6sZxiY5gWL94OLLxEDd22sXRAfQ'
   return fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`, {
     method: 'POST',
     body: JSON.stringify({
@@ -32,5 +35,7 @@ export function authWithEmailAndPassword(email, password) {
     }
   })
     .then(response => response.json())
-    .then(data => data.idToken)
+    .then(data => {
+      return data.idToken
+    })
 }

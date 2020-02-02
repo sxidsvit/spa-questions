@@ -1,6 +1,7 @@
 export class Question {
+  // отправляем вопрос методом POST на сервер firebase
   static create(question) {
-    return fetch('https://podcast-app-15663.firebaseio.com/questions.json', {
+    return fetch('https://asp-ads.firebaseio.com//questions.json', {
       method: 'POST',
       body: JSON.stringify(question),
       headers: {
@@ -16,11 +17,14 @@ export class Question {
       .then(Question.renderList)
   }
 
+  /* авторизованный пользователь имеет свой токен и может получить 
+  список всех вопрос с сервер firebase;
+  важно прописать в ПРавилах доступа к БД условие -  ".read": "auth != null", */
   static fetch(token) {
     if (!token) {
       return Promise.resolve('<p class="error">У вас нет токена</p>')
     }
-    return fetch(`https://podcast-app-15663.firebaseio.com/questions.json?auth=${token}`)
+    return fetch(`https://asp-ads.firebaseio.com/questions.json?auth=${token}`)
       .then(response => response.json())
       .then(response => {
         if (response && response.error) {
