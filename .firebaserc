@@ -1,5 +1,14 @@
 {
   "projects": {
-    "default": "podcast--app"
+    "default": "asp-ads"
+  },
+  "targets": {
+    "asp-ads": {
+      "hosting": {
+        "questions": [
+          "asp-questions"
+        ]
+      }
+    }
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "podcast-app",
   "version": "1.0.0",
-  "description": "Vladilen Podcast App",
+  "description": "sxidsvit Stream App",
   "main": "app.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
@@ -11,7 +11,7 @@
     "js",
     "javascript"
   ],
-  "author": "Vladilen <v@mail.ru>",
+  "author": "s.p.antonyuk@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",

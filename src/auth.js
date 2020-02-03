@@ -20,8 +20,8 @@ export function getAuthForm() {
 }
 
 export function authWithEmailAndPassword(email, password) {
-  // apiKey для доступа к проекту на сайте FIREBASE
-  // кроме ключа для входа понадобиться email & password
+  /* apiKey для доступа к проекту (веб-приложению) на сайте FIREBASE; 
+  кроме ключа для входа понадобиться email & password  */
   const apiKey =
     'AIzaSyB1YquE6sZxiY5gWL94OLLxEDd22sXRAfQ'
   return fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`, {
